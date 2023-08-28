@@ -1,8 +1,8 @@
 interface User {
-  birthYear: number
+  birthYear: number;
 }
 
-function calculateUserAge(user: User){
+function calculateUserAge(user: User) {
   return new Date().getFullYear() - user.birthYear;
 }
 

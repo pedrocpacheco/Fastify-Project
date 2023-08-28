@@ -6,7 +6,8 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "dev": "npx tsx watch src/server.ts"
+    "dev": "npx tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts --fix"
   },
   "dependencies": {
     "fastify": "^4.22.0"

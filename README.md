@@ -52,7 +52,35 @@ Startando um arquivo com tsx
 
 Settando com run dev
 ```json
-"scripts": {
-    "dev": "npx tsx watch src/server.ts"
+  "scripts": {
+      "dev": "npx tsx watch src/server.ts"
+    }
+```
+### Setup o eslint
+Baixando o eslint
+```bash
+  npm i eslint @rocketseat/eslint-config -D
+```
+
+Configurando o Arquivo do Eslint
+```json
+  {
+    "extends":[
+      "@rocketseat/eslint-config/node"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+    
   }
+```
+
+Criando npm run lint para salvar tudo direto
+```json
+  "lint": "eslint src --ext .ts --fix"
 ```

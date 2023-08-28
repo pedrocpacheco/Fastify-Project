@@ -110,3 +110,16 @@ app.get("/hello", async () => {
   console.log(tables);
 })
 ```
+
+{
+    "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "Bearded Theme Arc Eggplant",
+    "editor.fontFamily": "Jetbrains Mono",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.tabSize": 2,
+    "explorer.confirmDelete": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "window.zoomLevel": -1
+}

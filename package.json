@@ -1,6 +1,10 @@
 {
   "devDependencies": {
+    "tsx": "^3.12.7",
     "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "dev": "npx tsx watch src/server.ts"
   },
   "dependencies": {
     "fastify": "^4.22.0"

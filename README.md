@@ -1,9 +1,9 @@
 # Fastify-Project
 🦕 Basic project made using Fastify and TypeScript
 
-## Iniciando Projeto
+## 1.0 Iniciando Projeto
 
-### Baixando Typescript 
+### 1.1 Baixando Typescript 
 
 ```bash 
 npm i -D typescript
@@ -24,7 +24,7 @@ npm install tsx -D
 ```
 Converte o TS para JS automaticamente
 
-### Estrutura padrão do server.ts
+### 2.0 Estrutura padrão do server.ts
 
 ```javascript
 import fastify from "fastify"
@@ -40,33 +40,33 @@ app.listen({
 }).then(() => console.log("HTTP Server Running!"));
 ```
 
-### Configurando o tsx
+### 3.0 Configurando o tsx
 Baixando o tsx
 ```bash
-  npm i tsx -D
+npm i tsx -D
 ```
 Startando um arquivo com tsx
 ```bash
-  npx tsx src/server.ts
+npx tsx src/server.ts
 ```
 
 Settando com run dev
 ```json
-  "scripts": {
-      "dev": "npx tsx watch src/server.ts"
-    }
+"scripts": {
+  "dev": "npx tsx watch src/server.ts"
+}
 ```
-### Setup o eslint
+### 4.0 Setup o eslint
 Baixando o eslint
 ```bash
-  npm i eslint @rocketseat/eslint-config -D
+npm i eslint @rocketseat/eslint-config -D
 ```
 
 Configurando o Arquivo do Eslint
 ```json
-  {
-    "extends":[
-      "@rocketseat/eslint-config/node"
+{
+  "extends":[
+     "@rocketseat/eslint-config/node"
     ],
     "rules": {
       "prettier/prettier": [
@@ -83,4 +83,30 @@ Configurando o Arquivo do Eslint
 Criando npm run lint para salvar tudo direto
 ```json
   "lint": "eslint src --ext .ts --fix"
+```
+
+### 5.0 Configurando o Knex com Sqlite
+
+Baixando o Knex
+```bash
+npm i knex sqlite3
+```
+Criando arquivo de DB 
+
+```javascript
+import { knex as setupKnex } from "knex";
+
+export const knex = setupKnex({
+  client: "sqlite",
+  connection: {
+    filename: "./tmp/app.db",
+  },
+});
+```
+Testando o knex
+```javascript
+app.get("/hello", async () => {
+  const tables = await knex("sqlite_schema").select("*");
+  console.log(tables);
+})
 ```
